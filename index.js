@@ -1,20 +1,3 @@
-//adding event listener to button
-//specifying a click event
-//setting the click event to run handleClick function
-//no () needed on function
-document.querySelector("button").addEventListener("click", handleClick);
-
-// function that reacts when button gets click
-function handleClick() {
-  alert("I got clicked!");
-}
-
-// also can be done like this
-// called an anonymous function
-document.querySelectorAll("button")[2].addEventListener("click", function () {
-  alert("I got clicked!");
-});
-
 // adding event listener for document to hear keyboard presses
 document.addEventListener("keydown", function(event) {
   // event.key gives input of which key was pressed
@@ -96,53 +79,4 @@ function buttonAnimantion (currentKey) {
     activeButton.classList.remove("pressed");
   }, 100);
 }
-//passing functions as arguments
 
-function add (num1, num2) {
-  return num1 + num2;
-}
-
-function multiply (num1, num2) {
-  return num1 * num2;
-}
-
-//using operator as dummy variable for functions
-function calculator(num1, num2, operator) {
-  return operator(num1, num2);
-}
-
-//calling the function
-calculator(4,5,add);
-
-// Constructor function
-// first letter of function must be captialized
-function BellBoy(name, age, hasWorkPermit, languages) {
-  this.name = name;
-  this.age = age;
-  this.hasWorkPermit = hasWorkPermit;
-  this.languages = languages;
-  // creating method inside
-  this.moveSuitcase = function () {
-    alert("may i take your suitcase?");
-    pickUpSuitcase();
-    move();
-  }
-}
-//creating bell boy object
-var bellBoy1 = new BellBoy("Timmy", 19, true, ["french", "english"]);
-
-bellBoy1.moveSuitcase();
-
-// callback function - wait for an action to finish then execute functions
-function anotherAddEventListener(typeOfEvent, callback) {
-
-  var eventThatHappened = {
-    evenType: "keypress",
-    key: "p",
-    durationOfKeypress: 2
-  };
-
-  if (eventThatHappened.evenType === typeOfEvent) {
-    callback(eventThatHappened);
-  }
-}
